@@ -1,0 +1,39 @@
+{% extends "base_page.html" %}
+
+{% block page-title %}
+Добавить слово
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <form method="post" action="/send-word">
+        {% csrf_token %}
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="name" name="name" type="text" class="validate" required>
+                <label for="name">Ваше имя</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="new_word" name="new_word" type="text" class="validate" required>
+                <label for="new_word">Слово</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea id="new_translation" name="new_translation" class="materialize-textarea" required></textarea>
+                <label for="new_translation">Перевод слова</label>
+            </div>
+        </div>
+        <div class="row center-align">
+            <button class="btn waves-effect waves-light" type="submit" name="action">Отправить
+                <i class="material-icons right">send</i>
+            </button>
+        </div>
+    </form>
+    <div class="row center-align">
+        <a href="{% url 'index' %}" class="btn waves-effect waves-light">Вернуться на главную</a>
+    </div>
+</div>
+{% endblock %}

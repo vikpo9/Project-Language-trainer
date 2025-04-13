@@ -1,0 +1,35 @@
+{% extends "base_page.html" %}
+
+{% block page-title %}
+Список примеров использования слов
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <table class="highlight">
+        <thead>
+            <tr>
+                <th>Слово</th>
+                <th>Пример использования</th>
+                <th>Перевод предложения</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for example in examples %}
+                <tr>
+                    <td>{{ example.word }}</td>
+                    <td>{{ example.example_sentence }}</td>
+                    <td>{{ example.translation }}</td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="2" class="center-align">Нет примеров для отображения</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="row center-align">
+        <a href="{% url 'index' %}" class="btn waves-effect waves-light">Вернуться на главную</a>
+    </div>
+</div>
+{% endblock %}

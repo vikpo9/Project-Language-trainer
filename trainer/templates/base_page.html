@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block pagetitle %}{% endblock %}</title>
+    <!-- Подключение Materialize CSS -->
+        <link href="{% static 'css/materialize.min.css' %}" rel="stylesheet">
+    <!-- Подключение Materialize Icons -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="{% static 'css/custom.css' %}" rel="stylesheet">
+</head>
+<body>
+<main>
+    <div class="container">
+        <header class="section">
+            <a href="/" class="valign-wrapper grey-text text-darken-4">
+                <img src="{% static 'abc.svg' %}" alt="Тренажер" width="32" height="32"/>
+                <span class="flow-text">Тренажер для изучения английского языка</span>
+            </a>
+        </header>
+        <div class="section">
+            <h3 class="center-align">{% block page-title %}{% endblock %}</h3>
+            <p class="center-align flow-text">{% block page-lead %}{% endblock %}</p>
+        </div>
+        {% block content %}{% endblock %}
+        <footer class="page-footer">
+        <div class="container center-align">
+                © 2025
+            </div>
+        </footer>
+    </div>
+</main>
+<!-- Подключение Materialize JS -->
+<script src="{% static 'js/materialize.min.js' %}"></script>
+</body>
+</html>
+

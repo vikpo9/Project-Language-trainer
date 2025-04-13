@@ -1,0 +1,36 @@
+{% extends "base_page.html" %}
+
+{% block page-title %}
+{% if success %}
+Пример добавлен
+{% else %}
+Ошибка добавления
+{% endif %}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <h3 class="center-align">Результат запроса</h3>
+    </div>
+    <div class="row">
+        <p>Уважаемый пользователь <span class="italic">{{ user }}</span>,<br/>
+            Ваш запрос завершился <span class="bold">{% if success %}успешно{% else %}ошибкой{% endif %}</span>.
+        </p>
+    </div>
+    <div class="row">
+        <h3 class="center-align">Комментарий</h3>
+    </div>
+    <div class="row">
+        <p>{{ comment }}</p>
+    </div>
+    <div class="row">
+        <h3 class="center-align">Что можно сделать?</h3>
+    </div>
+    <div class="row center-align">
+        <a href="/add-example" class="btn waves-effect">Добавить ещё пример</a>
+        <a href="/" class="btn-flat">На главную</a>
+    </div>
+</div>
+{% endblock %}
+

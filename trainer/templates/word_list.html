@@ -1,0 +1,40 @@
+{% extends "base_page.html" %}
+
+{% block page-title %}
+Список слов
+{% endblock %}
+
+{% block page-lead %}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <table class="striped responsive-table">
+                <thead>
+                    <tr>
+                        <th class="center">#</th>
+                        <th>Слово</th>
+                        <th>Перевод</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for cnt, word, translation in words %}
+                    <tr>
+                        <td class="center">{{ cnt }}</td>
+                        <td>{{ word }}</td>
+                        <td>{{ translation }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row center-align">
+        <a href="{% url 'example_list' %}" class="btn waves-effect waves-light">Показать список примеров</a>
+    </div>
+    <div class="row center-align">
+        <a href="{% url 'index' %}" class="btn waves-effect waves-light">Вернуться на главную</a>
+    </div>
+</div>
+{% endblock %}

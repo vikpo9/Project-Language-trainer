@@ -1,0 +1,53 @@
+{% extends "base_page.html" %}
+
+{% block page-title %}
+Статистика
+{% endblock %}
+
+{% block page-lead %}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="section">
+        <h3 class="center-align">Количество слов</h3>
+        <div class="row card-container">
+            <div class="col s12 m6 l4">
+                <div class="card equal-height">
+                    <div class="card-content">
+                        <span class="card-title">Всего слов для изучения</span>
+                        <h4 class="center-align">{{ words_all }}</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6 l4">
+                <div class="card equal-height">
+                    <div class="card-content">
+                        <span class="card-title">Изначально бывших в базе</span>
+                        <h4 class="center-align">{{ words_own }}</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6 l4">
+                <div class="card equal-height">
+                    <div class="card-content">
+                        <span class="card-title">Добавленных через <a href="/add-word">форму</a></span>
+                        <h4 class="center-align">{{ words_added }}</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6 l4 offset-l4 offset-m3">
+                <div class="card equal-height">
+                    <div class="card-content">
+                        <span class="card-title">Угадано из всех попыток</span>
+                        <h4 class="center">{{ correct_user_answers }} из {{ total_attempts }}</h4>
+                        <p class="center-align text-muted">правильно угаданных в тесте</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row center-align">
+        <a href="{% url 'index' %}" class="btn waves-effect waves-light">Вернуться на главную</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
