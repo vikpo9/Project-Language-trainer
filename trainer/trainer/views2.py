@@ -3,7 +3,6 @@ from django.shortcuts import render
 from django.core.cache import cache
 
 
-
 def index(request):
     """Главная страница для примеров использования слов"""
     examples = get_examples_from_csv()
@@ -86,7 +85,8 @@ def write_example_to_csv(word, example_sentence, translation, author):
         # Проверка на дубликаты
         existing = get_examples_from_csv()
         for ex in existing:
-            if ex["word"].lower() == word.lower() and ex["example_sentence"].strip().lower() == example_sentence.strip().lower():
+            if ex["word"].lower() == word.lower() and ex[
+                "example_sentence"].strip().lower() == example_sentence.strip().lower():
                 return False  # уже существует
 
         with open("./data/examples.csv", "a", encoding="utf-8", newline="") as f:

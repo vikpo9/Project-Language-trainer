@@ -28,6 +28,7 @@ decide;решать;db
 deliver;доставлять;db
 despise;презирать;user
 discover;обнаруживать;db
+dog;собака;user
 draw;рисовать;db
 dream;мечтать;user
 drink;пить;db
@@ -78,6 +79,7 @@ lose;терять;db
 love;любить;db
 make;делать;db
 meet;встречать;db
+milk;молоко;user
 move;двигаться;db
 need;нуждаться;db
 open;открывать;db
